@@ -1,0 +1,8 @@
+node_modules
+dist
+public/test-generated
+.vercel
+.DS_Store
+*.local
+*.log
+.env*

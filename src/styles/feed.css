@@ -1,0 +1,244 @@
+.feed-screen {
+  position: absolute;
+  inset: 0;
+}
+
+.short-feed {
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scroll-snap-type: y mandatory;
+  overscroll-behavior-y: contain;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  background: #000;
+  touch-action: pan-y;
+}
+
+.short-feed::-webkit-scrollbar {
+  display: none;
+}
+
+.feed-item {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  background: #000;
+}
+
+.feed-video {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background: #000;
+}
+
+.feed-tap-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  touch-action: pan-y;
+}
+
+.feed-gradient {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.42) 0%,
+    rgba(0, 0, 0, 0) 26%,
+    rgba(0, 0, 0, 0) 55%,
+    rgba(0, 0, 0, 0.62) 100%
+  );
+}
+
+.feed-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.feed-loading {
+  position: absolute;
+  z-index: 3;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.55);
+  font-size: 13px;
+  color: var(--text-dim);
+  pointer-events: none;
+}
+
+.feed-paused {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  display: grid;
+  place-items: center;
+  pointer-events: none;
+}
+
+.feed-paused svg {
+  width: 34px;
+  height: 34px;
+  padding: 18px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(6px);
+}
+
+.feed-error {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: 6px;
+  padding: 24px;
+  text-align: center;
+  background: rgba(8, 8, 12, 0.82);
+}
+
+.feed-error-title {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.feed-error-file {
+  margin: 0;
+  font-size: 12px;
+  color: var(--text-dim);
+  word-break: break-all;
+}
+
+.feed-error-btn {
+  margin-top: 12px;
+  height: 44px;
+  padding: 0 18px;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.12);
+  cursor: pointer;
+}
+
+.feed-controls {
+  position: absolute;
+  z-index: 5;
+  top: calc(12px + var(--safe-top));
+  left: 12px;
+  right: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  pointer-events: none;
+}
+
+.feed-controls-right {
+  display: flex;
+  gap: 8px;
+}
+
+.round-btn {
+  pointer-events: auto;
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(10, 10, 14, 0.45);
+  backdrop-filter: blur(8px);
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.15s ease;
+}
+
+.round-btn:active {
+  transform: scale(0.94);
+}
+
+.round-btn.is-on {
+  border-color: var(--accent);
+  background: rgba(110, 231, 216, 0.22);
+}
+
+.toast {
+  position: absolute;
+  z-index: 7;
+  left: 50%;
+  bottom: calc(96px + var(--safe-bottom));
+  transform: translateX(-50%);
+  max-width: 88%;
+  padding: 10px 16px;
+  border-radius: 12px;
+  background: rgba(20, 20, 26, 0.94);
+  border: 1px solid var(--line);
+  font-size: 13px;
+  text-align: center;
+  animation: toast-in 0.18s ease;
+}
+
+@keyframes toast-in {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 8px);
+  }
+}
+
+.debug-overlay {
+  position: absolute;
+  z-index: 6;
+  left: 10px;
+  bottom: calc(10px + var(--safe-bottom));
+  width: min(300px, calc(100% - 20px));
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(110, 231, 216, 0.4);
+  background: rgba(4, 10, 10, 0.88);
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 11px;
+  pointer-events: none;
+}
+
+.debug-title {
+  margin: 0 0 6px;
+  color: var(--accent);
+  letter-spacing: 0.08em;
+}
+
+.debug-overlay dl {
+  margin: 0;
+  display: grid;
+  gap: 2px;
+}
+
+.debug-overlay dl > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.debug-overlay dt {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.debug-overlay dd {
+  margin: 0;
+  text-align: right;
+  word-break: break-all;
+}

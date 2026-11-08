@@ -1,0 +1,349 @@
+.skin {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.skin button {
+  pointer-events: auto;
+}
+
+.action-rail {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.action-btn {
+  display: grid;
+  justify-items: center;
+  gap: 3px;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+
+.action-btn svg {
+  filter: drop-shadow(0 1px 4px rgba(0, 0, 0, 0.55));
+  transition: transform 0.16s ease, color 0.16s ease;
+}
+
+.action-btn:active svg {
+  transform: scale(0.86);
+}
+
+.action-btn.is-active svg {
+  color: var(--like);
+}
+
+.action-btn.is-filled svg {
+  fill: currentColor;
+}
+
+.action-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.92);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+}
+
+.action-count {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.85);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+}
+
+.avatar-circle {
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.9);
+  background: linear-gradient(140deg, #6979f8, #b06ef8);
+  color: #fff;
+  font-weight: 700;
+}
+
+.bottom-info {
+  position: absolute;
+  display: grid;
+  gap: 4px;
+  color: #fff;
+}
+
+.video-title {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 600;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+}
+
+.video-caption {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.86);
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.creator-name {
+  font-size: 14px;
+  font-weight: 600;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+}
+
+/* ---------- Reels-like ---------- */
+
+.skin-reels .reels-tabs {
+  position: absolute;
+  top: calc(18px + var(--safe-top));
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.skin-reels .reels-tabs button {
+  padding: 2px 0;
+  border: 0;
+  background: none;
+  font-size: 15px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+}
+
+.skin-reels .reels-tabs button.is-current {
+  color: #fff;
+}
+
+.reels-tab-divider {
+  width: 1px;
+  height: 14px;
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.skin-reels .rail-reels {
+  right: 12px;
+  bottom: calc(158px + var(--safe-bottom));
+  gap: 20px;
+}
+
+.skin-reels .info-reels {
+  left: 16px;
+  bottom: calc(66px + var(--safe-bottom));
+  max-width: 68%;
+}
+
+.creator-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.creator-row .creator-name {
+  font-size: 14px;
+}
+
+.follow-chip {
+  padding: 2px 9px;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.skin-reels .like-count {
+  margin: 0;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.75);
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+}
+
+.skin-reels .nav-reels {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 24px calc(12px + var(--safe-bottom));
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent);
+}
+
+.nav-reels span,
+.nav-tiktok span {
+  display: grid;
+  place-items: center;
+  color: rgba(255, 255, 255, 0.62);
+}
+
+.nav-reels span.is-current,
+.nav-tiktok span.is-current {
+  color: #fff;
+}
+
+/* ---------- Shorts-like ---------- */
+
+.skin-shorts .rail-shorts {
+  right: 10px;
+  bottom: calc(128px + var(--safe-bottom));
+  gap: 20px;
+}
+
+.skin-shorts .info-shorts {
+  left: 16px;
+  bottom: calc(30px + var(--safe-bottom));
+  max-width: 72%;
+}
+
+.channel-name {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin: 0;
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.92);
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+}
+
+/* ---------- TikTok-like ---------- */
+
+.skin-tiktok .tiktok-tabs {
+  position: absolute;
+  top: calc(18px + var(--safe-top));
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 18px;
+}
+
+.skin-tiktok .tiktok-tabs button {
+  position: relative;
+  padding: 4px 0;
+  border: 0;
+  background: none;
+  font-size: 15px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+}
+
+.skin-tiktok .tiktok-tabs button.is-current {
+  color: #fff;
+}
+
+.skin-tiktok .tiktok-tabs button.is-current::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -3px;
+  transform: translateX(-50%);
+  width: 22px;
+  height: 2px;
+  border-radius: 2px;
+  background: #fff;
+}
+
+.skin-tiktok .rail-tiktok {
+  right: 10px;
+  bottom: calc(148px + var(--safe-bottom));
+  gap: 14px;
+}
+
+.tiktok-avatar {
+  position: relative;
+  margin-bottom: 6px;
+}
+
+.tiktok-follow {
+  position: absolute;
+  left: 50%;
+  bottom: -9px;
+  transform: translateX(-50%);
+  display: grid;
+  place-items: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--like);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.skin-tiktok .action-count {
+  margin-top: -2px;
+  font-weight: 600;
+}
+
+.tiktok-disc {
+  margin-top: 6px;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.tiktok-disc svg {
+  filter: drop-shadow(0 1px 4px rgba(0, 0, 0, 0.5));
+  animation: disc-spin 4.5s linear infinite;
+}
+
+@keyframes disc-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.skin-tiktok .info-tiktok {
+  left: 16px;
+  bottom: calc(68px + var(--safe-bottom));
+  max-width: 66%;
+}
+
+.skin-tiktok .creator-name {
+  font-weight: 700;
+}
+
+.audio-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 2px;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+  overflow: hidden;
+}
+
+.audio-label {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.skin-tiktok .nav-tiktok {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 24px calc(12px + var(--safe-bottom));
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.55), transparent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tiktok-disc svg {
+    animation: none;
+  }
+}
